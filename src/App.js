@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Unknown from './components/Unknown';
 
 function App() {
   return (
@@ -19,7 +20,10 @@ function App() {
             <Route path="/Login">
               <Login />
             </Route>
-            <Redirect to="/" />
+            <Route path="/unknown">
+              <Unknown />
+            </Route>
+            <Redirect to="/unknown" />
           </Switch>
         </div>  
     </Router>  

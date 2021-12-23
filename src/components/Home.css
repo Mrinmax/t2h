@@ -19,8 +19,12 @@
     
 }
 
-.container > h1 > button {
+.container > h1 > a > button {
     width: 35%;
     margin-left: 30px;
+    background: #6C63FF;
+    color: #fff;
+    cursor: pointer;
+    
     
 }
