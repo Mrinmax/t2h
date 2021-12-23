@@ -44,7 +44,7 @@ function Login() {
                 </Typography>
                 <Typography> Do you have an account?
                     <Link>
-                    Sign Up
+                     Sign Up
                     </Link>
                 </Typography>
             </Paper>
