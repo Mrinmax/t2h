@@ -14,22 +14,26 @@ function Navbar() {
     return (
         <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
             <GlobalStyle />
-            <Nav>
-                <img src="/images/t2hp.png" alt="t2h" />
-                <Search>
-                    <input type="text" placeholder="Search content..." />
-                </Search>
-                <Dark>
-                    <img src="/images/sun.svg" alt="" onClick={() =>themeToggler()} />
-                </Dark>
-            </Nav>
+                <Nav>
+                    <img src="/images/t2hp.png" alt="t2h" />
+                    <Search>
+                        <input type="text" placeholder="Search content..." />
+                    </Search>
+                    <Dark>
+                        <img src="/images/sun.svg" alt="" onClick={() =>themeToggler()} />
+                    </Dark>
+                </Nav>
+
+            <Container>
+               <h1>Hello content</h1>
+            </Container>
         </ThemeProvider>
     )
 }
 
 export default Navbar;
 
-const Nav = styled.nav`
+const Nav = styled.div`
     height: 70px;
     background: #ffffff;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
@@ -69,4 +73,9 @@ const Dark = styled.div`
         width: 24px;
         
     }
+`
+
+const Container = styled.div`
+    color: ${(props) => props.theme.text};
+    
 `
