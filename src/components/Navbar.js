@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme, GlobalStyle } from './Theme'
+import { lightTheme, darkTheme, GlobalStyle } from './Theme';
+import Button from '@material-ui/core/Button';
 
 
 function Navbar() {
@@ -25,7 +26,8 @@ function Navbar() {
                 </Nav>
 
             <Container>
-               <h1>Hello content</h1>
+                <Button type='submit' color='primary' fullWidth variant="contained" >New Model</Button>
+                <Button type='submit' color='secondary' fullWidth variant="contained" >Trained Model</Button>
             </Container>
         </ThemeProvider>
     )
@@ -77,5 +79,19 @@ const Dark = styled.div`
 
 const Container = styled.div`
     color: ${(props) => props.theme.text};
-    
+    /* background: #c0c0c0; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 220px;
+    padding-left: 600px;
+
+
+    Button {
+        width: 25%;
+        margin: 5px;
+        border-radius: 20px;
+        justify-content: center;
+    }
+
 `
