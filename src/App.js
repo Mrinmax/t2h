@@ -5,6 +5,7 @@ import Home from './components/Home';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Unknown from './components/Unknown';
+import Signup from './components/Signup';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Route path="/Login">
               <Login />
+            </Route>
+            <Route path="/signup">
+              <Signup />
             </Route>
             <Route path="/unknown">
               <Unknown />

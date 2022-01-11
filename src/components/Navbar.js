@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyle } from './Theme';
 import Button from '@material-ui/core/Button';
+import { Avatar } from '@material-ui/core';
 
 
 function Navbar() {
@@ -18,10 +19,13 @@ function Navbar() {
                 <Nav>
                     <img src="/images/t2hp.png" alt="t2h" />
                     <Search>
-                        <input type="text" placeholder="Search content..." />
+                        <h2>Text to Handwriting</h2>
                     </Search>
                     <Dark>
                         <img src="/images/sun.svg" alt="" onClick={() =>themeToggler()} />
+                        <Main>
+                          <Avatar />
+                        </Main>
                     </Dark>
                 </Nav>
 
@@ -53,17 +57,30 @@ const Nav = styled.div`
 `
 
 const Search = styled.div`
-    padding-top: 15px;
+  h2 {
+    font-size: 27px;
+    font-weight: 900;
+    color: #7C99AC;
 
-    input {
-        height: 5vh;
-        width: 30vw;
-        border-radius: 10px;
-        outline: 1px solid transparent;
-        font: 50px;
+    --x-offset: -0.0625em;
+    --y-offset: 0.0625em;
+    --stroke: 0.025em;
+    --background-color: white;
+    --stroke-color: lightblue;
+
+    text-shadow: var(--x-offset) var(--y-offset) 0px var(--background-color),
+      calc(var(--x-offset) - var(--stroke))
+        calc(var(--y-offset) + var(--stroke)) 0px var(--stroke-color);
     }
-    
-`
+
+  @supports (text-shadow: 1px 1px 1px 1px black) {
+    h2 {
+      text-shadow: var(--x-offset) var(--y-offset) 0px 0px
+          var(--background-color),
+        var(--x-offset) var(--y-offset) var(--stroke) 0px var(--stroke-color);
+    }
+  }
+`;
 
 const Dark = styled.div`
     display: flex;
@@ -75,6 +92,11 @@ const Dark = styled.div`
         width: 24px;
         
     }
+
+`
+
+const Main = styled.div`
+    margin-left: 11px;
 `
 
 const Container = styled.div`

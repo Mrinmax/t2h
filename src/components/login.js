@@ -9,6 +9,7 @@ function Login() {
     const paperStyle = {padding:20, height:'70vh', width:280, margin:'20px auto'}
     const avatarStyle = {backgroundColor:'#B91646'}
     const btnStyle = {margin:'8px 0'}
+    const button_style = {cursor:'pointer'}
 
 
 
@@ -43,7 +44,7 @@ function Login() {
                     </Link>
                 </Typography>
                 <Typography> Do you have an account?
-                    <Link>
+                    <Link href="/signup" style={button_style}>
                      Sign Up
                     </Link>
                 </Typography>
