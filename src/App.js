@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import Navbar from './components/Navbar';
 import Unknown from './components/Unknown';
 import Signup from './components/Signup';
+import CreateModel from './components/CreateModel';
+import ChooseModel from './components/ChooseModel';
 
 function App() {
   return (
@@ -17,6 +19,12 @@ function App() {
             </Route>
             <Route path="/navbar">
               <Navbar />
+            </Route>
+            <Route path="/createModel">
+              <CreateModel />
+            </Route>
+            <Route path="/chooseModel">
+              <ChooseModel />
             </Route>
             <Route path="/Login">
               <Login />

@@ -4,6 +4,10 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyle } from './Theme';
 import Button from '@material-ui/core/Button';
 import { Avatar } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import CreateModel from './CreateModel';
+// import ChooseModel from './ChooseModel';
 
 
 function Navbar() {
@@ -14,27 +18,51 @@ function Navbar() {
     }
 
     return (
-        <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-            <GlobalStyle />
-                <Nav>
-                    <img src="/images/t2hp.png" alt="t2h" />
-                    <Search>
-                        <h2>Text to Handwriting</h2>
-                    </Search>
-                    <Dark>
-                        <img src="/images/sun.svg" alt="" onClick={() =>themeToggler()} />
-                        <Main>
-                          <Avatar />
-                        </Main>
-                    </Dark>
-                </Nav>
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <GlobalStyle />
+        <Nav>
+          <img src="/images/t2hp.png" alt="t2h" />
+          <Search>
+            <h2>Text to Handwriting</h2>
+          </Search>
+          <Dark>
+            <img src="/images/sun.svg" alt="" onClick={() => themeToggler()} />
+            <Main>
+              <Avatar />
+            </Main>
+          </Dark>
+        </Nav>
 
-            <Container>
-                <Button type='submit' color='primary' fullWidth variant="contained" >New Model</Button>
-                <Button type='submit' color='secondary' fullWidth variant="contained" >Trained Model</Button>
-            </Container>
-        </ThemeProvider>
-    )
+        <Container>
+          <Link to="/CreateModel">
+            <Button type="submit" color="primary" fullWidth variant="contained">
+              Create Model
+            </Button>
+          </Link>
+          <Link to="/ChooseModel">
+            <Button
+              type="submit"
+              color="secondary"
+              fullWidth
+              variant="contained"
+            >
+              Choose Model
+            </Button>
+          </Link>
+        </Container>
+
+        {/* <Router>
+          <Switch>
+            <Route path="/createModel">
+              <CreateModel />
+            </Route>
+            <Route path="/chooseModel">
+              <ChooseModel />
+            </Route>
+          </Switch>
+        </Router> */}
+      </ThemeProvider>
+    );
 }
 
 export default Navbar;
@@ -111,6 +139,7 @@ const Container = styled.div`
 
     Button {
         width: 25%;
+        flex: 0;
         margin: 5px;
         border-radius: 20px;
         justify-content: center;
