@@ -11,7 +11,7 @@ function Login() {
     const btnStyle = {margin:'8px 0'}
     const button_style = {cursor:'pointer'}
     const hrStyle = {padding: 30}
-    const iconStyle = {padding:10, marginLeft: 30, cursor: 'pointer'}
+    const iconStyle = {padding:10, marginLeft: 40, cursor: 'pointer'}
     const span1 = {marginLeft:'10px'}
     const span2 = {marginLeft:'10px'}
 
