@@ -10,6 +10,10 @@ function Login() {
     const avatarStyle = {backgroundColor:'#B91646'}
     const btnStyle = {margin:'8px 0'}
     const button_style = {cursor:'pointer'}
+    const hrStyle = {padding: 30}
+    const iconStyle = {padding:10, marginLeft: 30, cursor: 'pointer'}
+    const span1 = {marginLeft:'10px'}
+    const span2 = {marginLeft:'10px'}
 
 
 
@@ -48,6 +52,17 @@ function Login() {
                      Sign Up
                     </Link>
                 </Typography>
+                
+                <div style={hrStyle}>
+                    <hr width="60%" />
+                    <div style={iconStyle}>
+                        <span><img src="./images/google.png" height="30" width="30" alt="google-icon" /></span>
+                        <span style={span1}><img src="./images/facebook.png" height="30" width="30" alt="facebook-icon" /></span>
+                        <span style={span2}><img src="./images/github.png" height="30" width="30"alt="github-icon" /></span>
+                    </div>
+                </div>
+
+                
             </Paper>
         </Grid>
     )
